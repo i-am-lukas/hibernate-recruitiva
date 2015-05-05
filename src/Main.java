@@ -9,11 +9,7 @@ public class Main {
         SessionFactory factory = new AnnotationConfiguration().configure().buildSessionFactory();
         Session session = factory.openSession();
 
-        Czlowiek person = new Czlowiek();
-        person.set_nazwisko("Kowalski");
-
         session.beginTransaction();
-        session.persist(person);
         session.getTransaction().commit();
 
         session.close();
